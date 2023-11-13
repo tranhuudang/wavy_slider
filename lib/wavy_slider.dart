@@ -23,7 +23,7 @@ class WavySlider extends StatefulWidget {
   final Color? backgroundColor;
 
   const WavySlider({
-    Key? key,
+    super.key,
     this.value = .5,
     this.waveHeight = 20,
     this.waveWidth = 20,
@@ -32,13 +32,13 @@ class WavySlider extends StatefulWidget {
     this.width = 200,
     this.color,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
-  WavySliderState createState() => WavySliderState();
+  State<WavySlider> createState() => _WavySliderState();
 }
 
-class WavySliderState extends State<WavySlider> {
+class _WavySliderState extends State<WavySlider> {
   late double _sliderValue;
   late double _width;
 
@@ -55,8 +55,8 @@ class WavySliderState extends State<WavySlider> {
     return GestureDetector(
       onHorizontalDragUpdate: (details) {
         double newValue =
-            (_sliderValue + details.primaryDelta! / context.size!.width)
-                .clamp(0.0, 1.0);
+        (_sliderValue + details.primaryDelta! / context.size!.width)
+            .clamp(0.0, 1.0);
         widget.onChanged(newValue);
         setState(() {
           _sliderValue = newValue;
@@ -65,6 +65,18 @@ class WavySliderState extends State<WavySlider> {
       },
       child: Stack(
         children: [
+
+          Container(
+            // Touchable height for GestureDetector to work
+              color: Colors.transparent,
+              height: widget.waveHeight + 10,
+              child: WavySliderBackground(
+                waveHeight: widget.waveHeight,
+                waveWidth: widget.waveWidth,
+                thickness: widget.strokeWidth,
+                width: widget.width,
+                color: widget.backgroundColor ?? Theme.of(context).dividerColor,
+              )),
           Container(
             // Touchable height for GestureDetector to work
             color: Colors.transparent,
@@ -83,17 +95,6 @@ class WavySliderState extends State<WavySlider> {
               ],
             ),
           ),
-          Container(
-              // Touchable height for GestureDetector to work
-              color: Colors.transparent,
-              height: widget.waveHeight + 10,
-              child: WavySliderBackground(
-                waveHeight: widget.waveHeight,
-                waveWidth: widget.waveWidth,
-                thickness: widget.strokeWidth,
-                width: widget.width,
-                color: widget.backgroundColor ?? Theme.of(context).dividerColor,
-              ))
         ],
       ),
     );
@@ -108,19 +109,19 @@ class WavySliderBackground extends StatefulWidget {
   final Color color;
 
   const WavySliderBackground({
-    Key? key,
+    super.key,
     required this.waveHeight,
     required this.waveWidth,
     this.width = 200,
     required this.thickness,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
-  WavySliderBackgroundState createState() => WavySliderBackgroundState();
+  State<WavySliderBackground> createState() => _WavySliderBackgroundState();
 }
 
-class WavySliderBackgroundState extends State<WavySliderBackground> {
+class _WavySliderBackgroundState extends State<WavySliderBackground> {
   late double _width;
 
   @override
@@ -156,12 +157,12 @@ class WaveLine extends StatelessWidget {
   final double thickness;
 
   const WaveLine({
-    Key? key,
+    super.key,
     required this.waveHeight,
     required this.waveWidth,
     required this.waveLineColor,
     required this.thickness,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
