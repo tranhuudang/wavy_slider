@@ -55,8 +55,8 @@ class WavySliderState extends State<WavySlider> {
     return GestureDetector(
       onHorizontalDragUpdate: (details) {
         double newValue =
-        (_sliderValue + details.primaryDelta! / context.size!.width)
-            .clamp(0.0, 1.0);
+            (_sliderValue + details.primaryDelta! / context.size!.width)
+                .clamp(0.0, 1.0);
         widget.onChanged(newValue);
         setState(() {
           _sliderValue = newValue;
@@ -84,7 +84,7 @@ class WavySliderState extends State<WavySlider> {
             ),
           ),
           Container(
-            // Touchable height for GestureDetector to work
+              // Touchable height for GestureDetector to work
               color: Colors.transparent,
               height: widget.waveHeight + 10,
               child: WavySliderBackground(
