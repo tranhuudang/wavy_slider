@@ -11,14 +11,14 @@ void main() {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              WaveSlider(
+              WavySlider(
                 onChanged: (currentValue) {
                   if (kDebugMode) {
                     print("------$currentValue");
                   }
                 },
               ),
-              WaveSlider(
+              WavySlider(
                 color: Colors.red,
                 strokeWidth: 6,
                 value: .2,

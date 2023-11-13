@@ -2,7 +2,7 @@ library wavy_slider;
 
 import 'package:flutter/material.dart';
 
-/// Create a horizontal wave line slider.
+/// Create a horizontal wavy line slider.
 ///
 ///  The [value] argument can either be null for an indeterminate
 ///  progress indicator, or a non-null value between 0.0 and 1.0 for a
@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 /// * [value] determines currently selected value for this slider.
 /// * [onChanged] is called when the user is selecting a new value for the
 /// slider.
-class WaveSlider extends StatefulWidget {
+class WavySlider extends StatefulWidget {
   final double value;
   final double waveHeight;
   final double waveWidth;
@@ -22,7 +22,7 @@ class WaveSlider extends StatefulWidget {
   final Color? color;
   final Color? backgroundColor;
 
-  const WaveSlider({
+  const WavySlider({
     Key? key,
     this.value = .5,
     this.waveHeight = 20,
@@ -35,10 +35,10 @@ class WaveSlider extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  WaveSliderState createState() => WaveSliderState();
+  WavySliderState createState() => WavySliderState();
 }
 
-class WaveSliderState extends State<WaveSlider> {
+class WavySliderState extends State<WavySlider> {
   late double _sliderValue;
   late double _width;
 
@@ -87,7 +87,7 @@ class WaveSliderState extends State<WaveSlider> {
             // Touchable height for GestureDetector to work
               color: Colors.transparent,
               height: widget.waveHeight + 10,
-              child: WaveSliderBackground(
+              child: WavySliderBackground(
                 waveHeight: widget.waveHeight,
                 waveWidth: widget.waveWidth,
                 thickness: widget.strokeWidth,
@@ -100,14 +100,14 @@ class WaveSliderState extends State<WaveSlider> {
   }
 }
 
-class WaveSliderBackground extends StatefulWidget {
+class WavySliderBackground extends StatefulWidget {
   final double width;
   final double waveHeight;
   final double waveWidth;
   final double thickness;
   final Color color;
 
-  const WaveSliderBackground({
+  const WavySliderBackground({
     Key? key,
     required this.waveHeight,
     required this.waveWidth,
@@ -117,10 +117,10 @@ class WaveSliderBackground extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  WaveSliderBackgroundState createState() => WaveSliderBackgroundState();
+  WavySliderBackgroundState createState() => WavySliderBackgroundState();
 }
 
-class WaveSliderBackgroundState extends State<WaveSliderBackground> {
+class WavySliderBackgroundState extends State<WavySliderBackground> {
   late double _width;
 
   @override

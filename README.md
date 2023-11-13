@@ -1,39 +1,46 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# wavy_slider
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+The wave_divider package is a versatile Flutter widget that enables you to add beautiful, wave-like slider to your UI. Whether you want to enhance the visual appeal of your app or create a decorative separation between sections, the WavySlider widget makes it easy and customizable.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/tranhuudang/wavy_slider?style=flat&logo=github&colorB=green&label=stars)](https://github.com/tranhuudang/wavy_slider/stargazers)
+[![Pub Version](https://img.shields.io/pub/v/wavy_slider.svg)](https://pub.dev/packages/wavy_slider/)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+![Screenshot](https://github.com/tranhuudang/wavy_slider/blob/master/example/preview.png?raw=true)
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+The `WavySlider` widget provides a simple way to create a horizontal wavy line slider. Here are some usage examples:
 
+1. Using the default wavy slider:
 ```dart
-const like = 'sample';
+  WaveSlider(
+    onChanged: (currentValue) {
+    if (kDebugMode) {
+      print("------$currentValue");
+    }
+    },
+  )
 ```
 
-## Additional information
+or a little bit of custom with:
+```dart 
+  WaveSlider(
+    color: Colors.red,
+    strokeWidth: 6,
+    value: .2,
+    waveWidth: 20,
+    waveHeight: 15,
+    width: 200,
+    onChanged: (currentValue) {
+      if (kDebugMode) {
+        print("------$currentValue");
+      }
+    },
+)
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### Support the Library
+
+You can support the library by liking it on pub, staring in on Github and reporting any bugs you
+encounter.
