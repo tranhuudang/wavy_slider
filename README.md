@@ -17,7 +17,7 @@ The `WavySlider` widget provides a simple way to create a horizontal wavy line s
   WaveSlider(
     onChanged: (currentValue) {
     if (kDebugMode) {
-      print("------$currentValue");
+      print(currentValue);
     }
     },
   )
@@ -34,7 +34,7 @@ or a little bit of custom with:
     width: 200,
     onChanged: (currentValue) {
       if (kDebugMode) {
-        print("------$currentValue");
+        print(currentValue);
       }
     },
 )

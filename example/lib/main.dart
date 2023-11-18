@@ -14,7 +14,7 @@ void main() {
               WavySlider(
                 onChanged: (currentValue) {
                   if (kDebugMode) {
-                    print("------$currentValue");
+                    print(currentValue);
                   }
                 },
               ),
@@ -27,7 +27,7 @@ void main() {
                 width: 200,
                 onChanged: (currentValue) {
                   if (kDebugMode) {
-                    print("------$currentValue");
+                    print(currentValue);
                   }
                 },
               ),

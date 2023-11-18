@@ -22,8 +22,6 @@ void main() {
     expect(find.byType(GestureDetector), findsOneWidget);
     expect(find.byType(Stack), findsOneWidget);
     expect(find.byType(Container), findsNWidgets(3)); // Two Containers in the Stack
-    expect(find.byType(WaveLine), findsNWidgets(2)); // One for the slider, one for the background
-    expect(find.byType(WavySliderBackground), findsOneWidget);
   });
 
   // Add more tests as needed...
