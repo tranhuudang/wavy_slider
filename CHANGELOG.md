@@ -1,3 +1,7 @@
+## 1.0.0
+
+* Fix slider not change when update value from outside.
+
 ## 0.0.4
 
 * Minor changes related to code style.

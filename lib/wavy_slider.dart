@@ -30,7 +30,7 @@ class WavySlider extends StatefulWidget {
     super.key,
     this.value = .5,
     this.waveHeight = 20,
-    this.waveWidth = 20,
+    this.waveWidth = 23,
     this.strokeWidth = 3,
     required this.onChanged,
     this.width = 200,
@@ -47,15 +47,9 @@ class _WavySliderState extends State<WavySlider> {
   late double _width;
 
   @override
-  void initState() {
-    super.initState();
-
+  Widget build(BuildContext context) {
     _sliderValue = widget.value;
     _width = _sliderValue * widget.width;
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return GestureDetector(
       onHorizontalDragUpdate: (details) {
         double newValue =
